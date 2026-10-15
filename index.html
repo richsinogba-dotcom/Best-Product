@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Best Product — a sentence in, eight seconds out</title>
+    <meta
+      name="description"
+      content="Best Product turns a written shot into finished 4K motion. Twelve candidates every time, so you pick the one that works."
+    />
+    <meta name="theme-color" content="#0c0a08" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Best Product — a sentence in, eight seconds out"
+    />
+    <meta
+      property="og:description"
+      content="Write a shot. Get twelve finished takes in forty-one seconds."
+    />
+    <meta property="og:image" content="media/city.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=boska@400,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230c0a08'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23c9a45a' text-anchor='middle'>B</text></svg>"
+    />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!-- ─────────────────────────  NAV  ───────────────────────── -->
+    <header class="nav" id="top">
+      <div class="nav__in">
+        <a class="nav__mark" href="#top">Best Product</a>
+        <nav class="nav__links" aria-label="Primary">
+          <a href="#gallery">Gallery</a>
+          <a href="#render">How it works</a>
+          <a href="#plans">Plans</a>
+          <a href="#questions">Questions</a>
+        </nav>
+
+        <div class="nav__tools">
+          <button
+            class="nav__motion"
+            type="button"
+            id="motionToggle"
+            aria-pressed="true"
+          >
+            <span class="vh">Background motion</span>
+            <span class="nav__motionlabel" aria-hidden="true">Motion</span>
+          </button>
+          <a class="btn btn--solid nav__cta" href="#start">Start rendering</a>
+          <button
+            class="nav__burger"
+            type="button"
+            id="navToggle"
+            aria-expanded="false"
+            aria-controls="navDrawer"
+          >
+            <span class="vh">Menu</span>
+            <span class="nav__bars" aria-hidden="true"><i></i><i></i></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="drawer" id="navDrawer" hidden>
+      <nav class="drawer__nav" aria-label="Primary">
+        <a href="#gallery"><span class="drawer__num">01</span>Gallery</a>
+        <a href="#render"><span class="drawer__num">02</span>How it works</a>
+        <a href="#plans"><span class="drawer__num">03</span>Plans</a>
+        <a href="#questions"><span class="drawer__num">04</span>Questions</a>
+        <a class="drawer__cta" href="#start">Start rendering</a>
+      </nav>
+    </div>
+
+    <main id="main">
+      <!-- ─────────────────────  HERO  ─────────────────────
+       The video is the background of the whole section.
+       The headline never lies on it: it sits on a solid
+       field that meets the footage on a clean edge.        -->
+      <section class="hero" id="hero">
+        <div class="hero__film" aria-hidden="true">
+          <div class="hero__stack">
+            <video
+              class="hero__clip is-on"
+              data-clip="city"
+              muted
+              loop
+              autoplay
+              playsinline
+              preload="auto"
+              poster="media/city.jpg"
+              src="media/city.mp4"
+            ></video>
+            <video
+              class="hero__clip"
+              data-clip="forest"
+              muted
+              loop
+              playsinline
+              preload="none"
+              poster="media/forest.jpg"
+              src="media/forest.mp4"
+            ></video>
+            <video
+              class="hero__clip"
+              data-clip="clouds"
+              muted
+              loop
+              playsinline
+              preload="none"
+              poster="media/clouds.jpg"
+              src="media/clouds.mp4"
+            ></video>
+            <video
+              class="hero__clip"
+              data-clip="room"
+              muted
+              loop
+              playsinline
+              preload="none"
+              poster="media/room.jpg"
+              src="media/room.mp4"
+            ></video>
+          </div>
+        </div>
+
+        <div class="hero__field">
+          <div class="hero__grid wrap">
+            <h1 class="hero__h1 lines">
+              <span class="line"
+                ><span data-line style="--i: 0">A sentence in.</span></span
+              >
+              <span class="line"
+                ><span data-line style="--i: 1">Eight seconds out.</span></span
+              >
+            </h1>
+
+            <div class="hero__side">
+              <p class="hero__lede" data-rise style="--i: 2">
+                Best Product reads a written shot and returns twelve finished
+                takes of it, every one eight seconds long,
+                from&nbsp;$19&nbsp;a&nbsp;month.
+              </p>
+
+              <!-- ── the live thing ── -->
+              <form
+                class="prompt"
+                id="prompt"
+                autocomplete="off"
+                data-rise
+                style="--i: 3"
+              >
+                <label class="vh" for="promptInput"
+                  >Describe the shot you want</label
+                >
+                <input
+                  class="prompt__in"
+                  id="promptInput"
+                  name="shot"
+                  type="text"
+                  maxlength="240"
+                  placeholder="a paper boat turning on black water"
+                  aria-describedby="promptNote"
+                />
+                <button
+                  class="btn btn--solid prompt__go"
+                  type="submit"
+                  id="promptGo"
+                >
+                  Render
+                </button>
+                <div class="prompt__bar" aria-hidden="true"><i></i></div>
+              </form>
+              <p
+                class="prompt__note"
+                id="promptNote"
+                role="status"
+                data-rise
+                style="--i: 4"
+              >
+                Twelve candidates. Picking one lights the room.
+              </p>
+
+              <a class="link hero__alt" href="#plans" data-rise style="--i: 5"
+                >See the plans</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────  CONTACT SHEET  ─────────────
+       The ritual: one prompt, twelve seeds, you choose.
+       A sticky player beside a list that scrolls past.   -->
+      <section class="sheet" id="gallery">
+        <div class="wrap">
+          <header class="sheet__head">
+            <h2 class="h2" data-reveal>Twelve, then one.</h2>
+            <p class="lede" data-reveal>
+              Every prompt returns twelve separate takes, not twelve variations
+              of one answer. Point at a frame and it plays in full.
+            </p>
+          </header>
+        </div>
+
+        <div class="sheet__body wrap">
+          <div class="sheet__player" id="sheetPlayer">
+            <div class="sheet__screen">
+              <video
+                class="sheet__vid is-on"
+                id="vidA"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                poster="media/city.jpg"
+              ></video>
+              <video
+                class="sheet__vid"
+                id="vidB"
+                muted
+                loop
+                playsinline
+                preload="none"
+                poster="media/city.jpg"
+              ></video>
+            </div>
+            <div class="sheet__read" aria-live="polite">
+              <p class="sheet__shot" id="sheetShot">
+                the push arrives too early
+              </p>
+              <p class="sheet__spec">
+                <span id="sheetNote">Take 1 of 12</span> ·
+                <span id="sheetSeed">8F2A11C4</span>
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="sheet__grid"
+            id="sheetList"
+            role="group"
+            aria-label="Twelve candidates — activate one to play it in full"
+          ></div>
+
+          <noscript>
+            <div class="sheet__static">
+              <p class="sheet__staticnote">
+                Motion needs JavaScript. Here are the twelve takes as stills.
+              </p>
+              <img src="media/city.jpg" alt="" loading="lazy" /><img
+                src="media/forest.jpg"
+                alt=""
+                loading="lazy"
+              />
+              <img src="media/rain.jpg" alt="" loading="lazy" /><img
+                src="media/smoke.jpg"
+                alt=""
+                loading="lazy"
+              />
+              <img src="media/room.jpg" alt="" loading="lazy" /><img
+                src="media/clouds.jpg"
+                alt=""
+                loading="lazy"
+              />
+              <img src="media/cliff.jpg" alt="" loading="lazy" /><img
+                src="media/water.jpg"
+                alt=""
+                loading="lazy"
+              />
+              <img src="media/cabin.jpg" alt="" loading="lazy" /><img
+                src="media/pool.jpg"
+                alt=""
+                loading="lazy"
+              />
+              <img src="media/roman.jpg" alt="" loading="lazy" /><img
+                src="media/cigar.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+          </noscript>
+        </div>
+      </section>
+
+      <!-- ─────────────  SCRUB  ─────────────
+       Scroll drives the playhead. The range input drives it too. -->
+      <section class="scrub" id="render">
+        <div class="scrub__in">
+          <div class="scrub__clause">
+            <p class="scrub__stage" id="scrubStage">
+              First, it parses the shot.
+            </p>
+            <h2 class="vh">How a render is made</h2>
+          </div>
+
+          <div class="scrub__screen">
+            <video
+              class="scrub__vid"
+              id="scrubVid"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="media/flame.jpg"
+            ></video>
+            <div class="scrub__hud" aria-hidden="true">
+              <p>The fire does all the lighting.</p>
+            </div>
+          </div>
+
+          <div class="scrub__track">
+            <label class="vh" for="scrubRange">Scrub through the render</label>
+            <input
+              class="scrub__range"
+              id="scrubRange"
+              type="range"
+              min="0"
+              max="1000"
+              value="0"
+              step="1"
+            />
+            <ol class="scrub__names" id="scrubNames">
+              <li>First</li>
+              <li>Twelve</li>
+              <li>One</li>
+              <li>Extend</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────  FIGURES IN A SENTENCE  ───────────── -->
+      <section class="stats" aria-labelledby="statsH">
+        <h2 class="vh" id="statsH">What a render costs you in time</h2>
+        <div class="wrap">
+          <div class="stats__grid">
+            <h3 class="stats__h" data-reveal>
+              Twelve takes in forty-one&nbsp;seconds.
+            </h3>
+            <p class="stats__p" data-reveal>
+              Every prompt comes back as <b>twelve candidates</b> in
+              <b>forty-one seconds</b>, each one <b>eight seconds</b> long and
+              ready to extend by <b>four</b>. A seed belongs to you, so the same
+              twelve come back whenever you ask for them.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────  WHAT IT HOLDS  ───────────── -->
+      <section class="board" id="controls">
+        <h2 class="vh">What you can hold</h2>
+        <div class="board__grid wrap">
+          <div class="tile tile--film t-6x4" data-ui data-reveal>
+            <video
+              class="tile__media"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="media/eye.jpg"
+              data-playloop
+            ></video>
+            <p class="tile__cap">
+              <span class="tile__name">Close-up fidelity</span
+              ><span class="tile__desc"
+                >Skin texture holds through the push-in.</span
+              >
+            </p>
+          </div>
+
+          <div class="tile tile--ui t-3x4" data-ui data-reveal>
+            <div class="frag frag--seg">
+              <p class="frag__label">Camera</p>
+              <div class="seg" role="group" aria-label="Camera move">
+                <button type="button" aria-pressed="false">Static</button>
+                <button type="button" aria-pressed="true">Push in</button>
+                <button type="button" aria-pressed="false">Orbit</button>
+              </div>
+            </div>
+            <p class="tile__cap">
+              <span class="tile__name">Camera</span
+              ><span class="tile__desc"
+                >Name the move in words or pick one.</span
+              >
+            </p>
+          </div>
+
+          <div class="tile tile--ui t-3x4" data-ui data-reveal>
+            <div class="frag frag--seed">
+              <p class="frag__label">Seed</p>
+              <p class="seed__val" id="seedVal">8F2A11C4</p>
+              <button class="btn btn--ghost" type="button" id="reroll">
+                Re-roll
+              </button>
+            </div>
+            <p class="tile__cap">
+              <span class="tile__name">Seeds</span
+              ><span class="tile__desc"
+                >Same seed, same twelve takes, forever.</span
+              >
+            </p>
+          </div>
+
+          <div class="tile tile--type t-6x2" data-reveal>
+            <h2 class="tile__head">What it holds.</h2>
+          </div>
+
+          <div class="tile tile--ui t-3x2" data-ui data-reveal>
+            <div class="frag frag--meter">
+              <p class="frag__label">Motion</p>
+              <div class="meter"><i style="--at: 62%"></i></div>
+            </div>
+            <p class="tile__cap">
+              <span class="tile__name">Motion</span
+              ><span class="tile__desc">How far the subject may drift.</span>
+            </p>
+          </div>
+
+          <div class="tile tile--ui t-3x2" data-ui data-reveal>
+            <div class="frag frag--time">
+              <p class="frag__label">Render</p>
+              <p class="time__val">41<span>s</span></p>
+            </div>
+            <p class="tile__cap">
+              <span class="tile__name">Queue</span
+              ><span class="tile__desc"
+                >Median, twelve candidates at once.</span
+              >
+            </p>
+          </div>
+
+          <div class="tile tile--film t-6x4" data-ui data-reveal>
+            <video
+              class="tile__media"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="media/smoke.jpg"
+              data-playloop
+            ></video>
+            <p class="tile__cap">
+              <span class="tile__name">Real light</span
+              ><span class="tile__desc"
+                >One source, no fill. It has to behave.</span
+              >
+            </p>
+          </div>
+
+          <div class="tile tile--ui t-3x4" data-ui data-reveal>
+            <div class="frag frag--seg">
+              <p class="frag__label">Format</p>
+              <div class="seg" role="group" aria-label="Aspect ratio">
+                <button type="button" aria-pressed="true">16:9</button>
+                <button type="button" aria-pressed="false">9:16</button>
+                <button type="button" aria-pressed="false">1:1</button>
+              </div>
+              <div
+                class="seg seg--second"
+                role="group"
+                aria-label="Clip length"
+              >
+                <button type="button" aria-pressed="true">8s</button>
+                <button type="button" aria-pressed="false">12s</button>
+              </div>
+            </div>
+            <p class="tile__cap">
+              <span class="tile__name">Format</span
+              ><span class="tile__desc"
+                >Aspect and length, set before you render.</span
+              >
+            </p>
+          </div>
+
+          <div class="tile tile--ui t-3x4" data-ui data-reveal>
+            <div class="frag frag--status">
+              <p class="frag__label">Job 4412</p>
+              <p class="status__word">Rendering</p>
+              <div class="bar"><i style="--at: 68%"></i></div>
+            </div>
+            <p class="tile__cap">
+              <span class="tile__name">Jobs</span
+              ><span class="tile__desc"
+                >Every render is kept, with its prompt.</span
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────  PLANS  ───────────── -->
+      <section class="plans" id="plans">
+        <div class="wrap">
+          <div class="plans__grid">
+            <div class="plans__left">
+              <h2 class="h2" data-reveal>What it costs.</h2>
+              <video
+                class="plans__film"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                poster="media/cabin.jpg"
+                data-playloop
+                data-reveal
+              ></video>
+            </div>
+
+            <div class="plans__menu" data-reveal>
+              <div class="group">
+                <h3 class="group__name">
+                  Monthly <span class="group__cur">USD</span>
+                </h3>
+                <ul class="group__items">
+                  <li class="row">
+                    <span class="row__name">Starter</span
+                    ><span class="row__price">0</span>
+                    <p class="row__desc">
+                      Twelve candidates a month, 720p, watermarked on export.
+                    </p>
+                  </li>
+                  <li class="row">
+                    <span class="row__name">Standard</span
+                    ><span class="row__price">19</span>
+                    <p class="row__desc">
+                      Four hundred candidates, 1080p, no watermark.
+                    </p>
+                  </li>
+                  <li class="row">
+                    <span class="row__name">Studio</span
+                    ><span class="row__price">79</span>
+                    <p class="row__desc">
+                      Two thousand candidates, 4K, four seats, priority queue.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="group">
+                <h3 class="group__name">
+                  Annual <span class="group__cur">USD</span>
+                </h3>
+                <ul class="group__items">
+                  <li class="row">
+                    <span class="row__name">Standard</span
+                    ><span class="row__price">182</span>
+                    <p class="row__desc">
+                      Four hundred candidates a month, billed yearly.
+                    </p>
+                  </li>
+                  <li class="row">
+                    <span class="row__name">Studio</span
+                    ><span class="row__price">758</span>
+                    <p class="row__desc">
+                      Two thousand candidates a month, ten seats, billed yearly.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="group">
+                <h3 class="group__name">
+                  Overage <span class="group__cur">USD</span>
+                </h3>
+                <ul class="group__items">
+                  <li class="row">
+                    <span class="row__name">One extra candidate</span
+                    ><span class="row__price">0.90</span>
+                    <p class="row__desc">
+                      Any plan can buy more. They do not expire.
+                    </p>
+                  </li>
+                  <li class="row">
+                    <span class="row__name">Four-second extension</span
+                    ><span class="row__price">3.00</span>
+                    <p class="row__desc">
+                      Added to a clip you already rendered.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+
+              <p class="plans__fine">
+                Prices are per month, per year or per item as marked, in US
+                dollars. Every plan includes the API, the job history and
+                unlimited re-rolls of a seed you already own.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────  QUESTIONS  ───────────── -->
+      <section class="faq" id="questions">
+        <div class="wrap">
+          <dl class="faq__list">
+            <div class="faq__row faq__row--head">
+              <dt class="faq__q faq__q--muted">Questions</dt>
+              <dd></dd>
+            </div>
+
+            <div class="faq__row" data-reveal>
+              <dt class="faq__q">Do I own the clips?</dt>
+              <dd class="faq__a">
+                Yes. What you render is yours to ship. Paid plans export without
+                a watermark, and the licence covers commercial use and resale of
+                the finished film, not of the raw model.
+              </dd>
+            </div>
+
+            <div class="faq__row" data-reveal>
+              <dt class="faq__q">How long is a clip?</dt>
+              <dd class="faq__a">
+                Eight seconds by default, twelve at most. Extension adds four
+                seconds at a time, and the last frame of one extension becomes
+                the first frame of the next.
+              </dd>
+            </div>
+
+            <div class="faq__row" data-reveal>
+              <dt class="faq__q">Can it hold a face?</dt>
+              <dd class="faq__a">
+                Faces drift once you pass three seconds. For dialogue, render an
+                empty plate at the right length and cut the performance in
+                afterwards.
+              </dd>
+            </div>
+
+            <div class="faq__row" data-reveal>
+              <dt class="faq__q">What about my own footage?</dt>
+              <dd class="faq__a">
+                Image to video takes a still as its first frame, so the shot
+                begins exactly where your photograph stops moving.
+              </dd>
+            </div>
+
+            <div class="faq__row" data-reveal>
+              <dt class="faq__q">Do the twelve differ?</dt>
+              <dd class="faq__a">
+                They are twelve seeds of one prompt. Not variations of a single
+                answer: twelve separate takes, any of which can be extended on
+                its own.
+              </dd>
+            </div>
+
+            <div class="faq__row" data-reveal>
+              <dt class="faq__q">Is there an API?</dt>
+              <dd class="faq__a">
+                There is. A render is one POST to <code>/v2/render</code> with
+                your prompt and seed count, and a webhook when the takes come
+                back.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ─────────────  START  ───────────── -->
+      <section class="start" id="start">
+        <div class="wrap">
+          <div class="start__grid">
+            <div class="start__left">
+              <h2 class="start__line" data-reveal>Write the&nbsp;shot.</h2>
+              <p class="start__note" data-reveal>
+                Create a workspace and the first twelve candidates are on your
+                account in under a minute.
+              </p>
+            </div>
+
+            <form
+              class="dialog"
+              id="dialog"
+              data-ui
+              autocomplete="off"
+              data-reveal
+            >
+              <p class="dialog__title">Name your workspace</p>
+              <label class="dialog__label" for="wsName">Workspace name</label>
+              <input
+                class="dialog__field"
+                id="wsName"
+                name="workspace"
+                type="text"
+                required
+                value="Nightshift Films"
+                aria-describedby="dialogOut"
+              />
+              <fieldset class="dialog__choice">
+                <legend class="dialog__label">What is it for</legend>
+                <div class="seg seg--wide">
+                  <label class="seg__opt"
+                    ><input
+                      type="radio"
+                      name="purpose"
+                      value="Personal"
+                      checked
+                    /><span>Personal</span></label
+                  >
+                  <label class="seg__opt"
+                    ><input type="radio" name="purpose" value="Team" /><span
+                      >Team</span
+                    ></label
+                  >
+                </div>
+              </fieldset>
+              <button class="btn btn--ink dialog__go" type="submit">
+                Create workspace
+              </button>
+              <p class="dialog__out" id="dialogOut" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ─────────────────────────  FOOTER  ───────────────────────── -->
+    <footer class="foot">
+      <div class="wrap">
+        <div class="foot__cols">
+          <div class="foot__col">
+            <p class="foot__h">Product</p>
+            <a href="#gallery">Gallery</a><a href="#render">How it works</a
+            ><a href="#plans">Plans</a><a href="#questions">Questions</a>
+          </div>
+          <div class="foot__col">
+            <p class="foot__h">Studio</p>
+            <a href="#top">About</a><a href="#top">Changelog</a
+            ><a href="#top">Status</a><a href="#top">Contact</a>
+          </div>
+          <div class="foot__col">
+            <p class="foot__h">Write to us</p>
+            <a href="mailto:hello@bestproduct.video">hello@bestproduct.video</a
+            ><a href="mailto:press@bestproduct.video"
+              >press@bestproduct.video</a
+            >
+          </div>
+          <div class="foot__col">
+            <p class="foot__h">Footage</p>
+            <a href="https://coverr.co" rel="noopener"
+              >Every clip on this page is free stock from Coverr, used under
+              their licence.</a
+            >
+          </div>
+        </div>
+
+        <div class="foot__markwrap">
+          <svg
+            class="foot__mark"
+            viewBox="0 0 1000 132"
+            role="img"
+            aria-label="Best Product"
+          >
+            <text
+              x="0"
+              y="108"
+              textLength="1000"
+              lengthAdjust="spacingAndGlyphs"
+            >
+              Best Product
+            </text>
+          </svg>
+        </div>
+
+        <p class="foot__legal">
+          © 2026 Best Product Motion Ltd. Footage courtesy of Coverr. Every
+          plan, price and figure on this page is sample content.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
